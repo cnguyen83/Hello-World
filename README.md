@@ -1,2 +1,3 @@
 # hello-world
-Sandbox
+
+A sandbox for refreshing some coding skills.
