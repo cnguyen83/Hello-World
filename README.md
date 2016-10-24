@@ -1,3 +1,3 @@
 # hello-world
 
-A sandbox for refreshing some coding skills.
+A sandbox for practicing basic coding in various languages.
