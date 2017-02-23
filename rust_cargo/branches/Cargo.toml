@@ -1,6 +1,6 @@
 [package]
 name = "branches"
 version = "0.1.0"
-authors = ["Christina Nguyen <cq_nguyen_vn@yahoo.com>"]
+authors = ["Christina Nguyen"]
 
 [dependencies]
