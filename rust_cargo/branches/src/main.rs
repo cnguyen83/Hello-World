@@ -6,6 +6,8 @@ fn main() {
     nonzero();
 
     if_else();
+
+    if_let();
 }
 
 fn if_else() {
@@ -20,6 +22,17 @@ fn if_else() {
     } else {
         println!("number is not divisible by 4, 3, or 2");
     }
+}
+
+fn if_let() {
+    let condition = true;
+    let number = if condition {
+        6
+    } else {
+        5
+    };
+
+    println!("the value of number is: {}", number);
 }
 
 fn nonzero() {
