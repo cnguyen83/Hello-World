@@ -3,6 +3,7 @@ fn main() {
     // infinite_loop();
 
     liftoff();
+    liftoff_for();
 
     array_while();
     array_for();
@@ -49,4 +50,12 @@ fn liftoff() {
     }
 
     println!("LIFTOFF!");
+}
+
+fn liftoff_for() {
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+
+    println!("LIFTOFF!!!");
 }
