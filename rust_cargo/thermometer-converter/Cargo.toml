@@ -1,0 +1,6 @@
+[package]
+name = "thermometer-converter"
+version = "0.1.0"
+authors = ["Christina Nguyen"]
+
+[dependencies]
