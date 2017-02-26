@@ -1,6 +1,8 @@
 {- Simple page that has counter buttons.
 Following the elm-lang tutorial:
 https://guide.elm-lang.org/architecture/user_input/buttons.html
+
+This project includes the extension excercise to have a "Reset" button.
 -}
 
 import Html exposing(Html, button, div, text)
