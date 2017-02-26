@@ -6,7 +6,7 @@ A sandbox for practicing basic coding in various languages.
 The different languages in this practice repository are:
 * C++
 * Elm
-* Ruse
+* Rust
 * Scala
 
 ### C++
