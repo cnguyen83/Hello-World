@@ -58,3 +58,9 @@ viewValidation model =
                 ("red", "Passwords do not match!")
     in
         div [ style [("color", color)] ] [ text message ]
+
+
+
+
+
+

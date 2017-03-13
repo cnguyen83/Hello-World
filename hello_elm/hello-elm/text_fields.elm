@@ -37,3 +37,11 @@ view model =
         [ input [ placeholder "Text to reverse", onInput Change ] []
         , div [] [text (String.reverse model.content) ]
         ]
+
+
+
+
+
+
+
+
