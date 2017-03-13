@@ -1,3 +1,8 @@
+{-
+    Example from Elm Tutorial
+    https://guide.elm-lang.org/architecture/user_input/forms.html
+-}
+
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
