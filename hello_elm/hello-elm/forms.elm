@@ -1,6 +1,14 @@
 {-
     Example from Elm Tutorial
     https://guide.elm-lang.org/architecture/user_input/forms.html
+
+
+
+    https://gist.github.com/moonlightdrive/86b5bcb57df87c45f468a13a326894ad
+    http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Char
+    http://package.elm-lang.org/packages/elm-lang/core/latest/String
+    http://elm-lang.org/docs/syntax
+    https://www.cis.upenn.edu/~matuszek/Concise%20Guides/Concise%20Elm.html
 -}
 
 import Html exposing (..)
