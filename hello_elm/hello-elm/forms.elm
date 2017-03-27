@@ -5,6 +5,8 @@
 
 
     https://gist.github.com/moonlightdrive/86b5bcb57df87c45f468a13a326894ad
+    https://gist.github.com/gabehollombe/45cb6f61ccb270931ded71f155ca37fe
+    https://dennisreimann.de/articles/elm.html
     http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Char
     http://package.elm-lang.org/packages/elm-lang/core/latest/String
     http://elm-lang.org/docs/syntax
