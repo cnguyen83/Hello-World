@@ -1,19 +1,62 @@
+var _cnguyen83$hello_world$Main$validate = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(
+		_elm_lang$core$String$length(model.password),
+		8) < 0) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password too short'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isDigit, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain a number'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isUpper, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain an upper-case letter'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isLower, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain a lower-case letter'} : (A2(_elm_lang$core$String$all, _elm_lang$core$Char$isDigit, model.password) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain an upper-case letter and a lower-case letter'} : {ctor: '_Tuple2', _0: 'green', _1: 'OK'}))));
+};
+var _cnguyen83$hello_world$Main$viewValidation = function (model) {
+	var _p0 = _elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? _cnguyen83$hello_world$Main$validate(model) : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'};
+	var color = _p0._0;
+	var message = _p0._1;
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$style(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'color', _1: color},
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(message),
+			_1: {ctor: '[]'}
+		});
+};
 var _cnguyen83$hello_world$Main$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
-			case 'Increment':
-				return model + 1;
-			case 'Decrement':
-				return model - 1;
+		var _p1 = msg;
+		switch (_p1.ctor) {
+			case 'Name':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{name: _p1._0});
+			case 'Password':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{password: _p1._0});
 			default:
-				return 0;
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{passwordAgain: _p1._0});
 		}
 	});
-var _cnguyen83$hello_world$Main$model = 0;
-var _cnguyen83$hello_world$Main$Reset = {ctor: 'Reset'};
-var _cnguyen83$hello_world$Main$Decrement = {ctor: 'Decrement'};
-var _cnguyen83$hello_world$Main$Increment = {ctor: 'Increment'};
+var _cnguyen83$hello_world$Main$Model = F3(
+	function (a, b, c) {
+		return {name: a, password: b, passwordAgain: c};
+	});
+var _cnguyen83$hello_world$Main$model = A3(_cnguyen83$hello_world$Main$Model, '', '', '');
+var _cnguyen83$hello_world$Main$PasswordAgain = function (a) {
+	return {ctor: 'PasswordAgain', _0: a};
+};
+var _cnguyen83$hello_world$Main$Password = function (a) {
+	return {ctor: 'Password', _0: a};
+};
+var _cnguyen83$hello_world$Main$Name = function (a) {
+	return {ctor: 'Name', _0: a};
+};
 var _cnguyen83$hello_world$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -21,64 +64,61 @@ var _cnguyen83$hello_world$Main$view = function (model) {
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$button,
+				_elm_lang$html$Html$input,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Events$onClick(_cnguyen83$hello_world$Main$Decrement),
-					_1: {ctor: '[]'}
+					_0: _elm_lang$html$Html_Attributes$type_('text'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$placeholder('Name'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_cnguyen83$hello_world$Main$Name),
+							_1: {ctor: '[]'}
+						}
+					}
 				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('-'),
-					_1: {ctor: '[]'}
-				}),
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$div,
-					{ctor: '[]'},
+					_elm_lang$html$Html$input,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text(
-							_elm_lang$core$Basics$toString(model)),
-						_1: {ctor: '[]'}
-					}),
+						_0: _elm_lang$html$Html_Attributes$type_('password'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$placeholder('Password'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onInput(_cnguyen83$hello_world$Main$Password),
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{ctor: '[]'}),
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$button,
+						_elm_lang$html$Html$input,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_cnguyen83$hello_world$Main$Increment),
-							_1: {ctor: '[]'}
+							_0: _elm_lang$html$Html_Attributes$type_('password'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$placeholder('Re-enter Password'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onInput(_cnguyen83$hello_world$Main$PasswordAgain),
+									_1: {ctor: '[]'}
+								}
+							}
 						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
-							_1: {ctor: '[]'}
-						}),
+						{ctor: '[]'}),
 					_1: {
 						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$button,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(_cnguyen83$hello_world$Main$Reset),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('Reset'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
+						_0: _cnguyen83$hello_world$Main$viewValidation(model),
+						_1: {ctor: '[]'}
 					}
 				}
 			}

@@ -8231,10 +8231,13 @@ var _elm_lang$html$Html_Events$Options = F2(
 	function (a, b) {
 		return {stopPropagation: a, preventDefault: b};
 	});
-var _user$project$Main$viewValidation = function (model) {
-	var _p0 = _elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? ((_elm_lang$core$Native_Utils.cmp(
+var _user$project$Main$validate = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$String$length(model.password),
-		8) > -1) ? {ctor: '_Tuple2', _0: 'green', _1: 'OK'} : {ctor: '_Tuple2', _0: 'red', _1: 'Password too short'}) : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'};
+		8) < 0) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password too short'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isDigit, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain a number'} : (A2(_elm_lang$core$String$all, _elm_lang$core$Char$isDigit, model.password) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain an upper-case letter and a lower-case letter'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isUpper, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain an upper-case letter'} : ((!A2(_elm_lang$core$String$any, _elm_lang$core$Char$isLower, model.password)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must contain a lower-case letter'} : {ctor: '_Tuple2', _0: 'green', _1: 'OK'}))));
+};
+var _user$project$Main$viewValidation = function (model) {
+	var _p0 = _elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? _user$project$Main$validate(model) : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'};
 	var color = _p0._0;
 	var message = _p0._1;
 	return A2(

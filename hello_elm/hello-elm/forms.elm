@@ -13,6 +13,7 @@
     https://www.cis.upenn.edu/~matuszek/Concise%20Guides/Concise%20Elm.html
 -}
 
+import Char
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
@@ -55,6 +56,20 @@ update msg model =
 
 -- VIEW 
 
+validate : Model -> (String, String)
+validate model =
+    if String.length model.password < 8 then
+        ("red", "Password too short")
+    else if not (String.any Char.isDigit model.password) then
+        ("red", "Password must contain a number")
+    else if (String.all Char.isDigit model.password) then
+        ("red", "Password must contain an upper-case letter and a lower-case letter")
+    else if not (String.any Char.isUpper model.password) then
+        ("red", "Password must contain an upper-case letter")
+    else if not (String.any Char.isLower model.password) then
+        ("red", "Password must contain a lower-case letter")
+    else ("green", "OK")
+
 view : Model -> Html Msg
 view model =
     div []
@@ -69,10 +84,11 @@ viewValidation model =
     let
         (color, message) =
             if model.password == model.passwordAgain then
-                if String.length model.password >= 8 then
+                validate model
+                {-if String.length model.password >= 8 then
                     ("green", "OK")
                 else
-                    ("red", "Password too short")
+                    ("red", "Password too short")-}
             else
                 ("red", "Passwords do not match!")
     in
