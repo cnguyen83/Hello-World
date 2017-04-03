@@ -1,9 +1,10 @@
 {-
     Example from Elm Tutorial
     https://guide.elm-lang.org/architecture/user_input/forms.html
+    Added cases to check for password requirements (maybe in too imperative of a style)
+    NOT added in age field and checker yet.
 
-
-
+    Resources:
     https://gist.github.com/moonlightdrive/86b5bcb57df87c45f468a13a326894ad
     https://gist.github.com/gabehollombe/45cb6f61ccb270931ded71f155ca37fe
     https://dennisreimann.de/articles/elm.html
